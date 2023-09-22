@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("Fish.csv")
 
 # Create a scatter plot
-plt.scatter(df['Weight'], df['Height'])
+fig, ax = plt.subplots()
+
+ax.scatter(df['Weight'], df['Height'])
 
 # Set labels and title
 plt.xlabel('Weight')
@@ -14,7 +16,7 @@ plt.ylabel('Height')
 plt.title('Scatter Plot: Weight vs. Height')
 
 # Display the plot in Streamlit
-st.pyplot()
+st.pyplot(fig)
 
 
 
